@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="one stop solution for all ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>हितकारी औषधालय</title>
+</head>
+<body>
+    <header class="Navigation">
+        <div class="contect">
+            <p><Marquee>Contect Number: +919711860604 Reg. no:36568</Marquee></p>
+        </div>
+                <img src="123.png" alt="logo" class="logo">
+            <nav>
+             <ul class="nav">
+                <li class="one"><a href="index.html">Home</a></li>
+                <li class="one"><a href="contectus.html">Contect us</a></li>
+                <li class="one"><a href="aboutus.html">about us</a></li>
+                <li class="one"><a href="https://www.facebook.com/profile.php?id=61556641696566">Facebook</a></li>
+                <li class="one"><a href="https://www.google.com/maps/place/Hitkari+Oshdhaly/@28.6138447,76.9763601,17z/data=!3m1!4b1!4m6!3m5!1s0x390d0fc4e3080fb9:0x81a82d4c45a91e9c!8m2!3d28.61384!4d76.978935!16s%2Fg%2F1ptzvn41k?entry=ttu">Location</a></li>
+            </ul>
+            </nav>
+        </header>
+        <Main id="main">
+            <div>
+                <h1 class="first">हितकारी औषधालय</h1>
+                <h1 class="first">44 वर्ष पुराना औषधालय नजफगढ़ नई दिल्ली में। </h1>
+            </div>
+            <div class="oldform">
+            <form method="post" id="form"
+            action="https://script.google.com/macros/s/AKfycbzdWQjZOy_JmlxxbY_HcThdtwirCWjP-duKxF-IhqcW1hh_-oFWp3mPoeiw8qMmoFx8fQ/exec">
+                <div class="Newform">
+                <Label for="Name">नाम:</Label>
+                <input type="text" id="name" placeholder="अपना नाम लिखिए" name="Name">
+                </div>
+                <div class="Newform">
+                    <label for="number"> फोन नम्बर:</label>
+                <input type="number" id="number" name="Number" placeholder="अपना नम्बर लिखिए">
+                </div>
+                <div class="Gender">
+                <label for="Gender">लिंग:</label>
+                <input type="radio" name="Gender">
+                <label>पुरूष</label>
+                <input type="radio" name="Gender">
+                <label>स्त्री</label>
+                <input type="radio" name="Gender">
+                <label>अन्य</label>
+                </div>
+                <div class="Newform">
+                <label for="issue"></label>
+                <textarea name="issue" id="issue" name="Issue" placeholder="आपको क्या बिमारी है?"></textarea>
+            </div>
+                <button name="btn">Submit</button>
+            </form>
+        </div>
+        </Main>
+        <footer>
+        <div class="contect number">
+            <h3>Dr.Satyender Dev Arya वैद्य सत्येन्द्र देव आर्य</h3>
+            <h4>Registration number:36568</h4>
+            <P>Phone number: 9711860604</P>
+            <P>Adress: 1A/10 A block Gopal Nagar, Sabzi Mandi, Najafgrh, South West Delhi: 110043</P>
+            <p> Nearet Dhansa stand metro staion and Najafgrh Terminal</p>
+        </div>
+        <p style="text-align: center;">copy-right@2024-25</p>
+    </footer>
+    <script>
+        let url='https://script.google.com/macros/s/AKfycbzdWQjZOy_JmlxxbY_HcThdtwirCWjP-duKxF-IhqcW1hh_-oFWp3mPoeiw8qMmoFx8fQ/exec'
+        let form=document.querySelector('#form');
+        form.addEventListener("submit",(e)=>{
+            e.target.btn.innerHTML="Submitting";
+            let d=new FormData(form);
+            fetch(url,{
+                method:"post",
+                body:d
+            }).then((res)=>res.text())
+            .then((finalRes)=>{
+                e.target.btn.innerHTML="Submit"
+                console.log(finalRes)})
+            e.preventDefault();
+        })
+    </script>
+</body>
+</html>
